@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerlinks}}
+</head>
+<body>
+   {{>nevbar}}
+
+   <!-- main header -->
+   <div class="container-fluid main-header">
+    <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+            <div class="main_content">
+                <form class="temp_form">
+                    <input type="text" id="cityname" placeholder="Enter your city name"> <!--autocomplete="off" -->
+                    <input type="submit" value="search" id="submitbtn">
+                </form>
+            </div>
+            <div class="tempinfo">
+                <div class="top_layer">
+                    <p id="day">Monday</p>
+                    <p id="today_date">5 JAN</p>
+                </div>
+                <div class="main_layer">
+                    <p id="city_name"> Get Output Here</p>
+                    <div class="middle_layer date_hide">
+                        <p id="temp"><span id="temp_val">0</span> <sup>o</sup>C</p>
+                        <p id="temp_status"><i class="fa-solid fa-cloud"></i></p>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+<!-- footer side -->
+{{>footer}}
+<script src="js/main.js"></script>
+<script>
+
+    const getCrrday = () => {
+      let weekday  = new Array(7);
+      weekday[0] = "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
+
+      let crrtime = new Date();
+      days = weekday[crrtime.getDay()];
+      let day = document.getElementById('day');
+
+      day.innerText = days;
+    } 
+
+    getCrrday();
+</script>
+</body>
+</html>
