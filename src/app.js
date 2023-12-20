@@ -37,7 +37,7 @@ app.get("/employes", (rq, rs) => {
 app.get("*", (rq, rs) => {
     rs.render("err404", {
         //props message
-        errmsg: 'oops! something went Wrong'            
+        errmsg: 'oops! something went Wrong! click the go back button'            
 
     });
 })
